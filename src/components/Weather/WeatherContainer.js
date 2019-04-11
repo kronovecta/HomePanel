@@ -7,18 +7,21 @@ export default class WeatherContainer extends Component {
   
     this.state = {
       currentWeather: { name: "Null", temp: 0, wind: 0, temp_min: 0, temp_max: 0, icon: null, sunrise: "00:00", sunset: "00:00" },
+      currentPosition: { lat: 0, long: 0 }
     }
   }
 
   getLocation() {
     if(navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(this.fetchWeather, null, { enableHighAccuracy: false });
+    }else {
+      console.log("Position failed")
     }
     
     return;
   }
 
-  fetchWeather(location) {    
+  fetchWeather = (location) => {    
     let API_KEY = process.env.REACT_APP_OPENWEATHERMAP_KEY;
     const lat = location.coords.latitude;
     const long = location.coords.longitude;

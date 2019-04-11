@@ -6,11 +6,19 @@ import WeatherContainer from './components/Weather/WeatherContainer';
 
 class App extends Component {
   render() {
+    let container = {
+      marginBottom: '2rem'
+    }
+
     return (
       <div className="App">
         <div className="container">
-          <TransportationContainer />
-          <WeatherContainer />
+          <div style={container}>
+            <WeatherContainer />
+          </div>
+          <div style={container}>
+            <TransportationContainer />
+          </div>
         </div>
       </div>
     );

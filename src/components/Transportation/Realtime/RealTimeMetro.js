@@ -33,7 +33,7 @@ const RealTimeMetro =({data}) => {
     }
 
     return (
-        <div style={container}>
+        <div className="innerContainer" style={container}>
             <div style={leftSection}>
                 <img src={BlueMetro} alt="" style={{marginRight:'1rem', width:'2rem'}}/>
                 <h3 style={inlineText}>{data.StopAreaName}</h3>
